@@ -1,0 +1,174 @@
+//call by value using swapp example
+==type one==
+---------------------------------------
+#include<iostream>
+using namespace std;
+
+int a,b;
+
+class Swap
+{
+	 
+	public:
+	void getdata();
+	void swapv(int x,int y);
+	void display();
+};
+
+void Swap::getdata()
+{
+    cout<<"Enter The value of A : ";
+    cin>>a;
+    cout<<"\nEnter The value of B : ";
+    cin>>b;
+}
+
+void Swap::swapv(int x,int y)
+{
+    int t=x;
+    x=y;
+	y=t;    
+}
+
+void Swap::display()
+{
+	cout<<"a="<<a<<"\t b="<<b;
+}
+
+int main()
+{
+	Swap s;
+	s.getdata();
+	cout<<"\nBefore swap:\n";
+	s.display();
+	s.swapv(a,b);
+	cout<<"\n\nAfter swap:\n";
+	s.display();
+	return 0;
+}
+
+==type two==
+-------------------
+/*Swapping using Call-by-value*/
+ 
+#include<iostream>
+using namespace std;
+ 
+//function to swap the Numbers: 
+void swap(int i , int j) 
+{
+    int temp=j;
+    j=i;
+    i=temp;
+}
+ 
+int main()
+{
+    int a,b; //variable to store the Numbers:
+    cout<<"Enter The value of A : ";
+    cin>>a;
+    cout<<"\nEnter The value of B : ";
+    cin>>b;
+ 
+    cout<<"\n Before swaping the value is : A = "<<a<<" B = "<<b<<endl;
+ 
+    swap(a,b); //function call-by-value.
+    cout<<" After swaping the value is A = :"<<a<<" B = "<<b<<endl;     
+ 
+    return 0;
+}
+
+output:
+Enter The value of A : 10
+Enter The value of B : 20
+Before swap:
+a=10     b=20
+After swap:
+a=10     b=20
+
+Note:
+In the above example, did you notice that the value of A and B is same after and before
+swapping. Because the value of the actual parameter is copied to the formal parameter 
+for the purpose of executing the function's code. Since it is working on a copy of the 
+actual parameter, the function's execution cannot affect the value of the actual parameter 
+owned by the value.
+
+
+/*Swapping using Call-by-pointer*/
+---------------------------------- 
+#include<iostream>
+using namespace std;
+ 
+//function to swap the Numbers:
+void swap(int *i , int *j)  
+{
+    int temp=*j;
+    *j=*i;
+    *i=temp;    
+}
+ 
+main()
+{
+    int a,b; //variable to store the Numbers:
+    cout<<"Enter The value of A : ";
+    cin>>a;
+    cout<<"\nEnter The value of B : ";
+    cin>>b;
+ 
+    cout<<"\n Before saping the value is : A = "<<a<<" B = "<<b<<endl;
+ 
+    swap(a,b); //function call-by-Pointer.
+    cout<<" After swaping the value is A = :"<<a<<" B = "<<b<<endl;     
+ 
+    return 0;
+}
+
+/*Swapping using Call-by-Reference*/
+------------------------------------ 
+#include<iostream>
+using namespace std;
+ 
+//function to swap the Numbers: 
+void swap(int &i , int &j) 
+{
+    int temp=j;
+    j=i;
+    i=temp;
+}
+ 
+main()
+{
+    int a,b; //variable to store the Numbers:
+    cout<<"Enter The value of A : ";
+    cin>>a;
+    cout<<"\nEnter The value of B : ";
+    cin>>b;
+ 
+    cout<<"\n Before swapping the value is : A = "<<a<<" B = "<<b<<endl;
+ 
+    swap(a,b); //function call-by-Reference.
+    cout<<" After swapping the value is A = :"<<a<<" B = "<<b<<endl;     
+ 
+    return 0;
+}
+
+
+//Inline Functions
+------------------
+#include<iostream>
+using namespace std;
+int a,b;
+inline int add()
+{
+	return (a+b);
+}
+
+int main()
+{
+   cout<<"First value is:";	
+   cin>>a;
+   cout<<"Second value is:";
+   cin>>b;
+   cout<<"Addition value is:"<<add();	
+   return 0;	
+}
