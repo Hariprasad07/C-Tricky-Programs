@@ -172,3 +172,85 @@ int main()
    cout<<"Addition value is:"<<add();	
    return 0;	
 }
+//inline second example
+-----------------------
+#include<iostream>
+using namespace std;
+
+inline int cube(int s)
+{
+	return s*s*s;
+}
+
+int main()
+{
+   int a;	
+   cout<<"Enter the value: ";
+   cin>>a;
+   cout<<"value is:"<<cube(a);	
+   return 0;	
+}
+
+
+//search an element using array
+--------------------------------
+#include <iostream>
+using namespace std;
+   
+int main(){
+    int input[100], count, i, num;
+       
+    cout << "Enter Number of Elements in Array\n";
+    cin >> count;
+     
+    cout << "Enter " << count << " numbers \n";
+      
+    // Read array elements
+    for(i = 0; i < count; i++){
+        cin >> input[i];
+    }
+      
+    cout << "Enter a number to serach in Array\n";
+    cin >> num;
+      
+    // search num in inputArray from index 0 to elementCount-1 
+    for(i = 0; i < count; i++){
+        if(input[i] == num){
+            cout << "Element found at index " << i;
+            break;
+        }
+    }
+      
+    if(i == count){
+        cout  << "Element Not Present in Input Array\n";
+    }
+ 
+    return 0;
+}
+
+
+//Simple interest
+-------------------
+#include<iostream>
+using namespace std;
+
+float SI(int p,int t,float r=7.5)
+{
+	return((p*t*r)/100);
+} 
+
+int main()
+{
+	int principle,time;
+	float si;
+	
+	cout<<"Enter the principle amount"<<endl;
+	cin>>principle;
+    cout<<"Enter the time"<<endl;
+	cin>>time;
+	
+	si=SI(principle,time);
+	cout<<"simple interest is: "<<si;
+	
+	return 0;
+}
