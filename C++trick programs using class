@@ -319,3 +319,54 @@ int main()
 	
 	return 0;	
 }
+
+#Virtual function
+------------------
+#include<iostream>
+using namespace std;
+
+class Base
+{
+public:
+ virtual void print()
+ {
+  cout<<"print base class"<<endl;
+ }
+ 
+ void show()
+  {
+   cout<<"show base class"<<endl;
+ }
+};
+
+class Derived : public Base
+{
+ public:
+ 	void print()
+	 {
+	  cout<<"print derive class"<<endl;
+	 }
+  void show()
+  {
+   cout<<"show derive class"<<endl;
+ }
+};
+
+	int main()
+	{
+	
+		Base *bptr;
+		Derived d;
+		
+		bptr=&d;
+		
+		bptr->print();  
+		bptr->show();  
+		
+		return 0;
+	}
+
+output:
+------
+print derive class
+show base class
