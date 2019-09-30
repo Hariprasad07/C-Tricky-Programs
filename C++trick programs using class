@@ -254,3 +254,68 @@ int main()
 	
 	return 0;
 }
+
+//constructor 
+----------------
+#include<iostream>
+using namespace std;
+
+class Cars
+{
+	
+	string company_Name;
+	string model_Name;
+	string fuel_Type;
+	float mile_Age;
+	double price;
+	
+	
+	public:
+		Cars()
+		{
+			cout<<"Default constructor"<<endl;
+		} 
+		
+		Cars(string cname, string mname, string ftype, float m, double p)
+		{
+			cout<<"paramaterised constructor"<<endl;
+			company_Name = cname;
+			model_Name = mname;
+			fuel_Type = ftype;
+			mile_Age = m;
+			price = p;
+		}
+		
+		Cars(Cars &obj)
+		{
+			cout<<"copy constructor"<<endl;
+			company_Name=obj.company_Name;
+			model_Name=obj.model_Name;
+			fuel_Type=obj.fuel_Type;
+			mile_Age=obj.mile_Age;
+			price=obj.price;
+		}
+		
+		void display()
+		{
+			cout<<"company Name"<<company_Name<<endl;
+			cout<<"model Name"<<model_Name<<endl;
+			cout<<"fuel Type"<<fuel_Type<<endl;
+			cout<<"mile Age"<<mile_Age<<endl;
+			cout<<"price"<<price<<endl;
+		}
+};
+
+int main()
+{
+    Cars c; //default constructor
+    c.display();
+    
+    Cars c2("Toyota","fortuner","diesel",10,350000); //parameterised constructor
+    c2.display();
+	
+	Cars c3=c; //copy constructor
+	c3.display();
+	
+	return 0;	
+}
