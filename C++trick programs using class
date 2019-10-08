@@ -370,3 +370,33 @@ output:
 ------
 print derive class
 show base class
+
+-------------------------
+//exception handling
+-------------------------
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+    int a, b,r;
+	
+	cout<<"Exception Handling"<<endl;
+	cin>>a>>b;
+	
+	try
+	{
+	  if(b==0)
+	  {
+	  	throw b;
+	  }	
+	  r=a/b;
+	}
+	catch(int e)
+	{
+	  cout<<"Devision by zero is not allowed"<<e<<endl;
+	}	
+    cout<<"Result is: "<<r;
+	return 0;
+}
