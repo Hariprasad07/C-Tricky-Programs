@@ -400,3 +400,56 @@ int main()
     cout<<"Result is: "<<r;
 	return 0;
 }
+
+------------------------
+Template
+------------------------
+
+//class template
+-----------------
+#include <iostream>  
+using namespace std;  
+
+template<class T>  
+class A   
+{  
+    public:  
+    T num1 = 5;  
+    T num2 = 6;  
+    void add()  
+    {  
+        cout << "Addition of num1 and num2 : " << num1+num2<<endl;  
+    }  
+      
+};  
+  
+int main()  
+{  
+    A<int> d;  
+    d.add();  
+    return 0;  
+}  
+
+
+//function template
+-------------------
+#include <iostream>  
+using namespace std;  
+
+template<class X> 
+void fun(X a)  
+{  
+    cout << "Value of a is : " <<a<< endl;  
+}  
+//for multiple parameters
+//template<class X,class Y> void fun(X b ,Y c)  
+//{  
+//    cout << "Value of b is : " <<b<< endl;  
+//    cout << "Value of c is : " <<c<< endl;  
+//}  
+int main()  
+{  
+   fun(10);  
+   //fun(20,30.5);  
+   return 0;  
+} 
